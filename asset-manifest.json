@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/expert-barnacle/static/css/main.6ad6edb0.css",
+    "main.js": "/expert-barnacle/static/js/main.d728d969.js",
+    "static/js/453.5c6ddc6a.chunk.js": "/expert-barnacle/static/js/453.5c6ddc6a.chunk.js",
+    "index.html": "/expert-barnacle/index.html",
+    "main.6ad6edb0.css.map": "/expert-barnacle/static/css/main.6ad6edb0.css.map",
+    "main.d728d969.js.map": "/expert-barnacle/static/js/main.d728d969.js.map",
+    "453.5c6ddc6a.chunk.js.map": "/expert-barnacle/static/js/453.5c6ddc6a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ad6edb0.css",
+    "static/js/main.d728d969.js"
+  ]
+}
