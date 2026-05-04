@@ -85,7 +85,7 @@ const openSourceProjectData = [
       'Evaluated on real-world repositories (Flask, Django), successfully identifying high-severity issues and generating structured review outputs.'
     ],
     tags: ['LLMs', 'AI Agents', 'Code Analysis', 'Python'],
-    github: 'https://github.com/Shri-Aakash'
+    github: 'https://github.com/Shri-Aakash/AI-PR-ReviewAgent'
   },
   {
     id: 'devsecops',
@@ -101,7 +101,7 @@ const openSourceProjectData = [
       'Validated on real-world vulnerable codebases, automatically detecting critical security flaws and producing actionable remediation outputs.'
     ],
     tags: ['LLMs', 'DevSecOps', 'Static Analysis', 'Security'],
-    github: 'https://github.com/Shri-Aakash'
+    github: 'https://github.com/Shri-Aakash/Ai-CodeModernizer'
   },
   {
     id: 'objdetmicro',
