@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/expert-barnacle/static/css/main.2caa89c3.css",
-    "main.js": "/expert-barnacle/static/js/main.502f90f0.js",
+    "main.js": "/expert-barnacle/static/js/main.98696ed8.js",
     "static/js/453.5c6ddc6a.chunk.js": "/expert-barnacle/static/js/453.5c6ddc6a.chunk.js",
     "index.html": "/expert-barnacle/index.html",
     "main.2caa89c3.css.map": "/expert-barnacle/static/css/main.2caa89c3.css.map",
-    "main.502f90f0.js.map": "/expert-barnacle/static/js/main.502f90f0.js.map",
+    "main.98696ed8.js.map": "/expert-barnacle/static/js/main.98696ed8.js.map",
     "453.5c6ddc6a.chunk.js.map": "/expert-barnacle/static/js/453.5c6ddc6a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2caa89c3.css",
-    "static/js/main.502f90f0.js"
+    "static/js/main.98696ed8.js"
   ]
 }
