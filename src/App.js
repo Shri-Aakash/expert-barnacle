@@ -27,13 +27,13 @@ const experienceData = [
     title: 'Software Engineering Intern',
     subtitle: 'Siemens Healthineers',
     date: 'Jan 2023 - July 2023',
-    shortDesc: 'Prototyped PET-MR calibration using C/C++ and implemented backend error reporting for UI display layers.',
+    shortDesc: 'Prototyped PET-MR calibration using C# and C++/CLI and implemented backend error reporting for UI display layers.',
     points: [
       'Conducted manual testing to uncover crash and edge-case scenarios; logged and tracked bugs in Azure Boards.',
       'Implemented backend error reporting mechanisms integrated into UI display layers.',
-      'Prototyped PET-MR calibration workflow using service-oriented modules in C and C++/CLI with a component-based architecture.'
+      'Prototyped PET-MR calibration workflow using service-oriented modules in C# and C++/CLI with a component-based architecture.'
     ],
-    tags: ['C', 'C++/CLI', 'Azure Boards']
+    tags: ['C#', 'C++/CLI', 'Azure Boards']
   }
 ];
 
@@ -72,6 +72,38 @@ const academicProjectData = [
 
 const openSourceProjectData = [
   {
+    id: 'pr-review',
+    title: 'AI PR Review Agent',
+    subtitle: 'Open Source Project',
+    date: '2026',
+    year: '2026',
+    shortDesc: 'Diff-aware AI system to analyze multi-file pull requests using LLM reasoning and static analysis.',
+    points: [
+      'Built a diff-aware AI system to analyze multi-file pull requests, combining static analysis with LLM reasoning to detect code quality issues and design risks.',
+      'Designed a pluggable architecture enabling extensible rule-based and ML-based analysis, supporting integration of multiple code analysis signals.',
+      'Implemented incremental processing to analyze only changed code, reducing analysis scope and enabling scalable review workflows.',
+      'Evaluated on real-world repositories (Flask, Django), successfully identifying high-severity issues and generating structured review outputs.'
+    ],
+    tags: ['LLMs', 'AI Agents', 'Code Analysis', 'Python'],
+    github: 'https://github.com/Shri-Aakash'
+  },
+  {
+    id: 'devsecops',
+    title: 'AI DevSecOps Code Modernizer',
+    subtitle: 'Open Source Project',
+    date: '2026',
+    year: '2026',
+    shortDesc: 'AI-powered modernization agent to detect security vulnerabilities and generate safe refactoring patches using LLMs.',
+    points: [
+      'Developed an AI-powered modernization agent to detect security vulnerabilities (e.g., SQL injection) and generate safe refactoring patches using LLMs.',
+      'Combined regex-based static analysis with LLM reasoning to identify multiple vulnerability patterns and produce secure transformations while preserving business logic.',
+      'Generated developer-ready patch files (Unified Diff format), enabling safe integration into existing workflows via git apply.',
+      'Validated on real-world vulnerable codebases, automatically detecting critical security flaws and producing actionable remediation outputs.'
+    ],
+    tags: ['LLMs', 'DevSecOps', 'Static Analysis', 'Security'],
+    github: 'https://github.com/Shri-Aakash'
+  },
+  {
     id: 'objdetmicro',
     title: 'Object Detection Microservice',
     subtitle: 'Open Source Project',
@@ -104,6 +136,18 @@ export default function App() {
 
   const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
+  // Prevent scrolling when modal is open
+  useEffect(() => {
+    if (modalContent) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [modalContent]);
+
   return (
     <div className={`min-h-screen font-sans transition-colors duration-300 ${isDarkMode ? 'dark bg-slate-900 text-slate-200' : 'bg-gray-50 text-gray-800'}`}>
       
@@ -131,10 +175,10 @@ export default function App() {
             Shri Aakash Padmanabhan
           </h1>
           <p className="text-xl md:text-2xl text-blue-600 dark:text-blue-400 font-medium">
-            Software Engineer <span className="text-gray-400 dark:text-gray-600">|</span> Embedded Systems & AI
+            Software Engineer <span className="text-gray-400 dark:text-gray-600">|</span> AI Systems & Robotics
           </p>
           <p className="max-w-2xl text-lg text-gray-600 dark:text-gray-400">
-            Building robust firmware, optimizing C++ performance, and integrating machine learning into physical systems. Currently working on clinical imaging diagnostics at Siemens Healthineers.
+            Building robust firmware, optimizing C++ performance, and developing LLM-based agents and machine learning systems. Currently working on clinical imaging diagnostics at Siemens Healthineers.
           </p>
           
           <div className="flex flex-wrap gap-4 pt-4">
@@ -205,7 +249,6 @@ export default function App() {
             
             <div className="relative border-l-2 border-gray-200 dark:border-slate-700 ml-3">
               
-              {/* Timeline Node 1 */}
               <div className="mb-10 ml-8">
                 <span className="absolute flex items-center justify-center w-4 h-4 rounded-full -left-[9px] ring-4 ring-gray-50 dark:ring-slate-900 bg-blue-600 dark:bg-blue-500"></span>
                 <h3 className="mb-1 text-lg font-bold text-gray-900 dark:text-white">
@@ -221,7 +264,6 @@ export default function App() {
 
             </div>
 
-            {/* Achievements Section integrated here to balance the layout */}
             <div className="mt-12">
               <div className="flex items-center gap-3 mb-6">
                 <Award className="text-blue-600 dark:text-blue-400" size={24} />
@@ -247,7 +289,7 @@ export default function App() {
             <Terminal className="text-blue-600 dark:text-blue-400" size={28} />
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Technical Skills</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             <div className="bg-white dark:bg-slate-800 p-5 rounded-xl border border-gray-200 dark:border-slate-700">
               <h3 className="font-semibold text-gray-900 dark:text-white mb-3">Programming</h3>
@@ -265,6 +307,17 @@ export default function App() {
               <div className="flex flex-wrap gap-2">
                 {['PyTorch', 'OpenCV', 'YOLOv5', 'dlib', 'scikit-learn'].map(skill => (
                   <span key={skill} className="px-3 py-1 text-xs font-mono bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-md border border-purple-100 dark:border-purple-800/50">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-slate-800 p-5 rounded-xl border border-gray-200 dark:border-slate-700">
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-3">AI Systems</h3>
+              <div className="flex flex-wrap gap-2">
+                {['LLM-based Agents', 'Code Analysis', 'Prompt Engineering'].map(skill => (
+                  <span key={skill} className="px-3 py-1 text-xs font-mono bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded-md border border-indigo-100 dark:border-indigo-800/50">
                     {skill}
                   </span>
                 ))}
@@ -296,16 +349,16 @@ export default function App() {
           </div>
         </section>
 
-        {/* Academic Projects */}
+        {/* Open Source Projects */}
         <section>
           <div className="flex items-center gap-3 mb-8">
-            <Cpu className="text-blue-600 dark:text-blue-400" size={28} />
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Academic Projects & Publications</h2>
+            <Code className="text-blue-600 dark:text-blue-400" size={28} />
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Open Source & AI Projects</h2>
           </div>
           
           <div className="grid md:grid-cols-2 gap-6">
             
-            {academicProjectData.map((project) => (
+            {openSourceProjectData.map((project) => (
               <div 
                 key={project.id}
                 className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-gray-200 dark:border-slate-700 flex flex-col h-full cursor-pointer hover:shadow-lg hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300 group"
@@ -336,16 +389,16 @@ export default function App() {
           </div>
         </section>
 
-        {/* Open Source Projects */}
+        {/* Academic Projects */}
         <section>
           <div className="flex items-center gap-3 mb-8">
-            <Code className="text-blue-600 dark:text-blue-400" size={28} />
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Open Source & Personal Projects</h2>
+            <Cpu className="text-blue-600 dark:text-blue-400" size={28} />
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Academic Projects & Publications</h2>
           </div>
           
           <div className="grid md:grid-cols-2 gap-6">
             
-            {openSourceProjectData.map((project) => (
+            {academicProjectData.map((project) => (
               <div 
                 key={project.id}
                 className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-gray-200 dark:border-slate-700 flex flex-col h-full cursor-pointer hover:shadow-lg hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300 group"
